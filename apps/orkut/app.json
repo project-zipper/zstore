@@ -1,0 +1,12 @@
+{
+{
+  "name": "Orkut",
+  "description": "I Just Put This Here For Memories.",
+  "logo": "logo.png",
+  "platforms": {
+    "apk": "orkut-2-1-5.apk"
+  },
+  "version": "1.0.0",
+  "developer": "Google LLC",
+  "category": "Social"
+}
