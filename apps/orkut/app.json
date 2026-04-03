@@ -2,7 +2,7 @@
 {
   "name": "Orkut",
   "description": "I Just Put This Here For Memories.",
-  "logo": "logo.png",
+  "logo": "IMG_1921.png",
   "platforms": {
     "sh": "install.sh"
   },
