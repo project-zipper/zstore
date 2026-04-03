@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ZStore</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #0f0f0f;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.card {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 20px;
+    width: 320px;
+    text-align: center;
+}
+img {
+    width: 100px;
+    border-radius: 20px;
+}
+button {
+    margin-top: 20px;
+    padding: 12px;
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <img id="logo" src="logo.png">
+    <h1 id="name">Loading...</h1>
+    <p id="desc">Loading app info...</p>
+    <button onclick="installApp()">Install</button>
+</div>
+
+<script>
+let appData = {};
+
+fetch("app.json")
+.then(res => res.json())
+.then(data => {
+    appData = data;
+    document.getElementById("name").innerText = data.name;
+    document.getElementById("desc").innerText = data.description;
+    document.getElementById("logo").src = data.logo || "logo.png";
+});
+
+function installApp() {
+    if (appData.apk) {
+        // 🔥 APK install (Android-style)
+        window.location.href = appData.apk;
+    } 
+    else if (appData.sh) {
+        // 🔥 ZipperOS custom handler
+        window.location.href = "zstore://install?script=" + encodeURIComponent(appData.sh);
+    } 
+    else {
+        alert("No install method available");
+    }
+}
+</script>
+
+</body>
+</html>
