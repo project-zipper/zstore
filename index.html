@@ -13,6 +13,7 @@ body {
 
 h1 {
     padding: 20px;
+    text-align: center;
 }
 
 .grid {
@@ -20,6 +21,7 @@ h1 {
     grid-template-columns: repeat(auto-fill, 150px);
     gap: 20px;
     padding: 20px;
+    justify-content: center;
 }
 
 .card {
@@ -31,6 +33,8 @@ h1 {
 
 .card img {
     width: 80px;
+    height: 80px;
+    object-fit: cover;
     border-radius: 15px;
 }
 
@@ -44,6 +48,9 @@ button {
     color: white;
     cursor: pointer;
 }
+button:hover {
+    background: #45a049;
+}
 </style>
 </head>
 <body>
@@ -52,46 +59,48 @@ button {
 <div class="grid" id="apps"></div>
 
 <script>
-// List of app folders in /apps/
-// You can generate this automatically in ZipperOS if you want
-const appFolders = [
-    "orkut",
-    "nes-emulator",
-    "dos-app"
-];
+// Fetch apps from dynamically generated apps/index.json
+async function loadApps() {
+    try {
+        const res = await fetch("apps/index.json");
+        const appFolders = await res.json(); // ["orkut", "dos-app", ...]
 
-function loadApps() {
-    const container = document.getElementById("apps");
+        const container = document.getElementById("apps");
 
-    appFolders.forEach(folder => {
-        const basePath = `apps/${folder}/`;
-        fetch(basePath + "app.json")
-            .then(res => res.json())
-            .then(app => {
+        for (const folder of appFolders) {
+            const basePath = `apps/${folder}/`;
+            try {
+                const appRes = await fetch(basePath + "app.json");
+                const app = await appRes.json();
+
+                const logo = app.logo ? basePath + app.logo : basePath + "logo.png";
+                const name = app.name || folder;
+                const desc = app.description || "";
+
                 const card = document.createElement("div");
                 card.className = "card";
 
-                // Use logo.png if exists, or fallback
-                const logo = app.logo ? basePath + app.logo : basePath + "logo.png";
-
-                const name = app.name || folder; // fallback to folder name
-                const desc = app.description || ""; // optional
-
                 card.innerHTML = `
-                    <img src="${logo}">
+                    <img src="${logo}" alt="${name}">
                     <h3>${name}</h3>
                     <p>${desc}</p>
                     <button onclick='installApp("${basePath}", ${JSON.stringify(app.platforms || {})})'>
                         Install
                     </button>
                 `;
+
                 container.appendChild(card);
-            })
-            .catch(err => console.log("Failed to load app:", folder));
-    });
+            } catch {
+                console.log("Failed to load app.json for", folder);
+            }
+        }
+    } catch {
+        console.log("Failed to load apps/index.json. Make sure it exists!");
+    }
 }
 
 function installApp(basePath, platforms) {
+    // Determine platform
     let platform = "android";
     const ua = navigator.userAgent;
 
@@ -111,6 +120,7 @@ function installApp(basePath, platforms) {
     }
 }
 
+// Load apps on page load
 loadApps();
 </script>
 
