@@ -52,7 +52,8 @@ button {
 <div class="grid" id="apps"></div>
 
 <script>
-// List your apps folder names here (auto-detecting folders in plain HTML/JS isn’t possible)
+// List of app folders in /apps/
+// You can generate this automatically in ZipperOS if you want
 const appFolders = [
     "orkut",
     "nes-emulator",
@@ -63,19 +64,24 @@ function loadApps() {
     const container = document.getElementById("apps");
 
     appFolders.forEach(folder => {
-        const basePath = `apps/${folder}/`; // relative path to the app folder
+        const basePath = `apps/${folder}/`;
         fetch(basePath + "app.json")
             .then(res => res.json())
             .then(app => {
                 const card = document.createElement("div");
                 card.className = "card";
 
-                const logo = basePath + "logo.png";
+                // Use logo.png if exists, or fallback
+                const logo = app.logo ? basePath + app.logo : basePath + "logo.png";
+
+                const name = app.name || folder; // fallback to folder name
+                const desc = app.description || ""; // optional
 
                 card.innerHTML = `
                     <img src="${logo}">
-                    <h3>${app.name}</h3>
-                    <button onclick='installApp("${basePath}", ${JSON.stringify(app.platforms)})'>
+                    <h3>${name}</h3>
+                    <p>${desc}</p>
+                    <button onclick='installApp("${basePath}", ${JSON.stringify(app.platforms || {})})'>
                         Install
                     </button>
                 `;
@@ -101,7 +107,7 @@ function installApp(basePath, platforms) {
         // ZipperOS custom installer
         window.location.href = "zstore://install?script=" + encodeURIComponent(basePath + platforms.sh);
     } else {
-        alert("No compatible version for your platform");
+        alert("No compatible version found for your platform");
     }
 }
 
