@@ -1,0 +1,36 @@
+{
+  "apps": [
+    {
+      "name": "microg",
+      "package": "com.zipperos.microg",
+      "version": "1.0",
+      "apk": "apks/core/microg.apk",
+      "category": "core",
+      "icon": "icons/core/microg.png"
+    },
+    {
+      "name": "termux",
+      "package": "com.zipperos.termux",
+      "version": "1.0",
+      "apk": "apks/core/termux.apk",
+      "category": "core",
+      "icon": "icons/core/termux.png"
+    },
+    {
+      "name": "vlc",
+      "package": "com.zipperos.vlc",
+      "version": "1.0",
+      "apk": "apks/media/vlc.apk",
+      "category": "media",
+      "icon": "icons/media/vlc.png"
+    },
+    {
+      "name": "spotify",
+      "package": "com.zipperos.spotify",
+      "version": "1.0",
+      "apk": "apks/media/spotify.apk",
+      "category": "media",
+      "icon": "icons/media/spotify.png"
+    }
+  ]
+}
