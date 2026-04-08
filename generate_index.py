@@ -17,23 +17,26 @@ apps = []
 # 1️⃣ Fetch F-Droid index
 print("Fetching F-Droid index...")
 fdroid_data = requests.get(FDROID_INDEX_URL).json()
-packages = fdroid_data.get("packages", {})
+packages = fdroid_data.get("packages", [])
 
 # Handle packages as dict or list
 if isinstance(packages, dict):
     package_items = packages.items()
 elif isinstance(packages, list):
-    package_items = []
-    for item in packages:
-        pkg_name = item.get("packageName") or item.get("package") or "unknown"
-        package_items.append((pkg_name, item))
+    package_items = [
+        (pkg.get("packageName") or pkg.get("package") or f"pkg{i}", pkg)
+        for i, pkg in enumerate(packages)
+    ]
 else:
     package_items = []
 
 for pkg, details in package_items:
-    # Ensure 'versions' exists and is a list
-    versions = details.get("versions") if isinstance(details, dict) else []
-    if not versions:
+    # Ensure details is a dict
+    if not isinstance(details, dict):
+        continue
+
+    versions = details.get("versions")
+    if not versions or not isinstance(versions, list):
         continue
 
     latest = versions[-1]
@@ -45,17 +48,18 @@ for pkg, details in package_items:
     apk_url = f"https://f-droid.org/repo/{apk_name}"
     local_path = os.path.join(FDROID_APK_DIR, apk_name)
 
-    # Download APK if not already present
+    # Download APK if not present
     if not os.path.exists(local_path):
         print(f"Downloading {apk_name}...")
         r = requests.get(apk_url)
         with open(local_path, "wb") as f:
             f.write(r.content)
 
-    # Safe fallback for name and category
-    metadata = details.get("metadata", {}) if isinstance(details, dict) else {}
-    app_name = metadata.get("name", {}).get("en", pkg)
-    category = metadata.get("categories", ["fdroid"])[0]
+    metadata = details.get("metadata", {})
+    name_dict = metadata.get("name", {})
+    app_name = name_dict.get("en", pkg)
+    categories = metadata.get("categories", ["fdroid"])
+    category = categories[0] if categories else "fdroid"
 
     apps.append({
         "name": app_name,
@@ -63,7 +67,7 @@ for pkg, details in package_items:
         "version": version_name,
         "apk": local_path.replace("\\","/"),
         "category": category,
-        "icon": f"{ICON_DIR}/fdroid/{pkg}.png"  # optional
+        "icon": f"{ICON_DIR}/fdroid/{pkg}.png"
     })
 
 print(f"F-Droid apps added: {len(apps)}")
