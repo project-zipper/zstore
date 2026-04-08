@@ -1,12 +1,12 @@
 {
   "apps": [
     {
-      "name": "microg",
-      "package": "com.zipperos.microg",
+      "name": "F-Droid",
+      "package": "com.zipperos.fdroid",
       "version": "1.0",
-      "apk": "apks/core/microg.apk",
+      "apk": "apks/core/F-Droid.apk",
       "category": "core",
-      "icon": "icons/core/microg.png"
+      "icon": "icons/core/fdroid.png"
     },
     {
       "name": "termux",
