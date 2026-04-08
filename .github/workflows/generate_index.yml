@@ -1,5 +1,8 @@
 name: Generate AppStore JSON
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
   workflow_dispatch:
   push:
@@ -13,10 +16,10 @@ jobs:
 
     steps:
     - name: Checkout repo
-      uses: actions/checkout@v3
+      uses: actions/checkout@v3.1.0
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v4.4.0
       with:
         python-version: '3.x'
 
@@ -26,7 +29,7 @@ jobs:
     - name: Run JSON generator
       run: python generate_index.py
 
-    - name: Commit index.json
+    - name: Commit generated files
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "GitHub Actions"
