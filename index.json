@@ -9,12 +9,12 @@
       "icon": "icons/core/fdroid.png"
     },
     {
-      "name": "termux",
-      "package": "com.zipperos.termux",
+      "name": "aproide",
+      "package": "com.zipperos.aptoide",
       "version": "1.0",
-      "apk": "apks/core/termux.apk",
+      "apk": "apks/core/aptoide.apk",
       "category": "core",
-      "icon": "icons/core/termux.png"
+      "icon": "icons/core/aptoide.png"
     },
     {
       "name": "vlc",
