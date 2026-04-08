@@ -19,10 +19,22 @@ print("Fetching F-Droid index...")
 fdroid_data = requests.get(FDROID_INDEX_URL).json()
 packages = fdroid_data.get("packages", {})
 
-for pkg, details in packages.items():
-    versions = details.get("versions", [])
+# Handle packages as dict or list
+if isinstance(packages, dict):
+    package_items = packages.items()
+elif isinstance(packages, list):
+    package_items = []
+    for item in packages:
+        pkg_name = item.get("packageName") or item.get("package") or "unknown"
+        package_items.append((pkg_name, item))
+else:
+    package_items = []
+
+for pkg, details in package_items:
+    # Ensure 'versions' exists and is a list
+    versions = details.get("versions") if isinstance(details, dict) else []
     if not versions:
-        continue  # skip apps without versions
+        continue
 
     latest = versions[-1]
     apk_name = latest.get("apkName")
@@ -40,8 +52,10 @@ for pkg, details in packages.items():
         with open(local_path, "wb") as f:
             f.write(r.content)
 
-    app_name = details.get("metadata", {}).get("name", {}).get("en", pkg)
-    category = details.get("metadata", {}).get("categories", ["fdroid"])[0]
+    # Safe fallback for name and category
+    metadata = details.get("metadata", {}) if isinstance(details, dict) else {}
+    app_name = metadata.get("name", {}).get("en", pkg)
+    category = metadata.get("categories", ["fdroid"])[0]
 
     apps.append({
         "name": app_name,
