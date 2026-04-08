@@ -1,10 +1,45 @@
 {
   "apps": [
-    {"name": "Placeholder App 1","package": "com.zipperos.placeholder1","version": "1.0","apk": "apks/placeholders/app1.apk","category": "placeholders","icon": "icons/default.png"},
-    {"name": "Placeholder App 2","package": "com.zipperos.placeholder2","version": "1.0","apk": "apks/placeholders/app2.apk","category": "placeholders","icon": "icons/default.png"},
-    {"name": "Placeholder App 3","package": "com.zipperos.placeholder3","version": "1.0","apk": "apks/placeholders/app3.apk","category": "placeholders","icon": "icons/default.png"},
-    {"name": "Placeholder App 4","package": "com.zipperos.placeholder4","version": "1.0","apk": "apks/placeholders/app4.apk","category": "placeholders","icon": "icons/default.png"},
-    {"name": "Placeholder App 5","package": "com.zipperos.placeholder5","version": "1.0","apk": "apks/placeholders/app5.apk","category": "placeholders","icon": "icons/default.png"},
+    {
+      "name": "F-Droid",
+      "package": "com.zipperos.fdroid",
+      "version": "1.0",
+      "apk": "apks/core/F-Droid.apk",
+      "category": "core",
+      "icon": "icons/core/IMG_2240.png"
+    },
+    {
+      "name": "Aptoide",
+      "package": "com.zipperos.aptoide",
+      "version": "1.0",
+      "apk": "apks/core/aptoide.apk",
+      "category": "core",
+      "icon": "icons/core/IMG_2244.png"
+    },
+    {
+      "name": "HW Module Test",
+      "package": "com.zipperos.hwmoduletest",
+      "version": "1.0",
+      "apk": "apks/core/com.android.vending-84022626-hw.apk",
+      "category": "core",
+      "icon": "icons/core/IMG_2242.png"
+    },
+    {
+      "name": "Android Market",
+      "package": "com.zipperos.market",
+      "version": "1.0",
+      "apk": "apks/core/market.apk",
+      "category": "core",
+      "icon": "icons/core/IMG_2243.png"
+    },
+    {
+      "name": "Wifi Analyzer",
+      "package": "com.zipperos.wifianalyzer",
+      "version": "1.0",
+      "apk": "apks/core/com.farproc.wifi.analyzer_2.2.9-27_minAPI3(nodpi)_apkmirror.com.apk",
+      "category": "core",
+      "icon": "icons/core/IMG_2253.png"
+    },
     {"name": "Placeholder App 6","package": "com.zipperos.placeholder6","version": "1.0","apk": "apks/placeholders/app6.apk","category": "placeholders","icon": "icons/default.png"},
     {"name": "Placeholder App 7","package": "com.zipperos.placeholder7","version": "1.0","apk": "apks/placeholders/app7.apk","category": "placeholders","icon": "icons/default.png"},
     {"name": "Placeholder App 8","package": "com.zipperos.placeholder8","version": "1.0","apk": "apks/placeholders/app8.apk","category": "placeholders","icon": "icons/default.png"},
