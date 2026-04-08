@@ -9,7 +9,7 @@
       "icon": "icons/core/IMG_2240.png"
     },
     {
-      "name": "aptoide",
+      "name": "Aptoide",
       "package": "com.zipperos.aptoide",
       "version": "1.0",
       "apk": "apks/core/aptoide.apk",
@@ -18,7 +18,7 @@
     },
     {
       "name": "HW Module Test",
-      "package": "com.zipperos.com.android.vending-84022626-hw",
+      "package": "com.zipperos.hwmoduletest",
       "version": "1.0",
       "apk": "apks/core/com.android.vending-84022626-hw.apk",
       "category": "core",
@@ -30,9 +30,8 @@
       "version": "1.0",
       "apk": "apks/core/market.apk",
       "category": "core",
-      "icon": "icons/core/IMG_2243"
+      "icon": "icons/core/IMG_2243.png"
     },
-    
     {
       "name": "Wifi Analyzer",
       "package": "com.zipperos.wifianalyzer",
