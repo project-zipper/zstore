@@ -1,0 +1,85 @@
+{
+  "apps": [
+    {
+      "name": "Placeholder App 1",
+      "package": "com.zipperos.placeholder1",
+      "version": "1.0",
+      "apk": "apks/placeholders/app1.apk",
+      "category": "placeholders",
+      "icon": "icons/default.png"
+    },
+    {
+      "name": "Placeholder App 2",
+      "package": "com.zipperos.placeholder2",
+      "version": "1.0",
+      "apk": "apks/placeholders/app2.apk",
+      "category": "placeholders",
+      "icon": "icons/default.png"
+    },
+    {
+      "name": "Placeholder App 3",
+      "package": "com.zipperos.placeholder3",
+      "version": "1.0",
+      "apk": "apks/placeholders/app3.apk",
+      "category": "placeholders",
+      "icon": "icons/default.png"
+    },
+    {
+      "name": "Placeholder App 4",
+      "package": "com.zipperos.placeholder4",
+      "version": "1.0",
+      "apk": "apks/placeholders/app4.apk",
+      "category": "placeholders",
+      "icon": "icons/default.png"
+    },
+    {
+      "name": "Placeholder App 5",
+      "package": "com.zipperos.placeholder5",
+      "version": "1.0",
+      "apk": "apks/placeholders/app5.apk",
+      "category": "placeholders",
+      "icon": "icons/default.png"
+    },
+    {
+      "name": "Placeholder App 6",
+      "package": "com.zipperos.placeholder6",
+      "version": "1.0",
+      "apk": "apks/placeholders/app6.apk",
+      "category": "placeholders",
+      "icon": "icons/default.png"
+    },
+    {
+      "name": "Placeholder App 7",
+      "package": "com.zipperos.placeholder7",
+      "version": "1.0",
+      "apk": "apks/placeholders/app7.apk",
+      "category": "placeholders",
+      "icon": "icons/default.png"
+    },
+    {
+      "name": "Placeholder App 8",
+      "package": "com.zipperos.placeholder8",
+      "version": "1.0",
+      "apk": "apks/placeholders/app8.apk",
+      "category": "placeholders",
+      "icon": "icons/default.png"
+    },
+    {
+      "name": "Placeholder App 9",
+      "package": "com.zipperos.placeholder9",
+      "version": "1.0",
+      "apk": "apks/placeholders/app9.apk",
+      "category": "placeholders",
+      "icon": "icons/default.png"
+    },
+    {
+      "name": "Placeholder App 10",
+      "package": "com.zipperos.placeholder10",
+      "version": "1.0",
+      "apk": "apks/placeholders/app10.apk",
+      "category": "placeholders",
+      "icon": "icons/default.png"
+    }
+    // … continue until Placeholder App 100
+  ]
+}
