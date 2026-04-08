@@ -9,7 +9,7 @@
       "icon": "icons/core/fdroid.png"
     },
     {
-      "name": "aproide",
+      "name": "aptoide",
       "package": "com.zipperos.aptoide",
       "version": "1.0",
       "apk": "apks/core/aptoide.apk",
@@ -17,12 +17,12 @@
       "icon": "icons/core/aptoide.png"
     },
     {
-      "name": "vlc",
-      "package": "com.zipperos.vlc",
+      "name": "HW Module Test",
+      "package": "com.zipperos.com.android.vending-84022626-hw",
       "version": "1.0",
-      "apk": "apks/media/vlc.apk",
-      "category": "media",
-      "icon": "icons/media/vlc.png"
+      "apk": "apks/core/com.android.vending-84022626-hw.apk",
+      "category": "core",
+      "icon": "icons/core/hw.png"
     },
     {
       "name": "spotify",
