@@ -40,7 +40,7 @@
       "category": "core",
       "icon": "icons/core/IMG_2253.png"
     },
-    {"name": "Placeholder App 6","package": "com.zipperos.placeholder6","version": "1.0","apk": "apks/placeholders/app6.apk","category": "placeholders","icon": "icons/default.png"},
+    {"name": "Old Youtube","package": "com.zipperos.oldyoutube","version": "1.0","apk": "apks/core/com.google.android.youtube_1.6.19_(E)-1619_minAPI7(nodpi)_apkmirror.com.apk","category": "classic","icon": "icons/default.png"},
     {"name": "Placeholder App 7","package": "com.zipperos.placeholder7","version": "1.0","apk": "apks/placeholders/app7.apk","category": "placeholders","icon": "icons/default.png"},
     {"name": "Placeholder App 8","package": "com.zipperos.placeholder8","version": "1.0","apk": "apks/placeholders/app8.apk","category": "placeholders","icon": "icons/default.png"},
     {"name": "Placeholder App 9","package": "com.zipperos.placeholder9","version": "1.0","apk": "apks/placeholders/app9.apk","category": "placeholders","icon": "icons/default.png"},
