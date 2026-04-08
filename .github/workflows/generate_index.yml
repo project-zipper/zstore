@@ -1,10 +1,12 @@
-- name: Commit generated index.json
-  run: |
-    git config --local user.name "github-actions[bot]"
-    git config --local user.email "github-actions[bot]@users.noreply.github.com"
-    git add index.json
-    git diff --cached --quiet || git commit -m "Update index.json"
-    git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+name: Generate ZipperOS AppStore JSON
+
+# Trigger manually or when APKs change
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'apks/**'
+      - '.github/workflows/generate_index.yml'
 
 jobs:
   build:
@@ -27,12 +29,11 @@ jobs:
       - name: Run generate_index.py
         run: python generate_index.py
 
-      # 4️⃣ Commit and push updated index.json
+      # 4️⃣ Commit and push updated index.json using GITHUB_TOKEN
       - name: Commit generated index.json
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git add index.json
           git diff --cached --quiet || git commit -m "Update index.json"
-          git push
-        continue-on-error: true
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
