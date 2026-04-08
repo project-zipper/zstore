@@ -30,6 +30,15 @@
       "version": "1.0",
       "apk": "apks/core/market.apk",
       "category": "core",
+      "icon": "icons/core/IMG_2243.
+    },
+    
+    {
+      "name": "Wifi Analyzer",
+      "package": "com.zipperos.wifianalyzer",
+      "version": "1.0",
+      "apk": "apks/core/com.farproc.wifi.analyzer_2.2.9-27_minAPI3(nodpi)_apkmirror.com.apk",
+      "category": "core",
       "icon": "icons/core/IMG_2243.png"
     }
   ]
