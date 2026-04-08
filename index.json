@@ -25,12 +25,12 @@
       "icon": "icons/core/hw.png"
     },
     {
-      "name": "spotify",
-      "package": "com.zipperos.spotify",
+      "name": "Android Market",
+      "package": "com.zipperos.market",
       "version": "1.0",
-      "apk": "apks/media/spotify.apk",
-      "category": "media",
-      "icon": "icons/media/spotify.png"
+      "apk": "apks/core/market.apk",
+      "category": "core",
+      "icon": "icons/core/market.png"
     }
   ]
 }
