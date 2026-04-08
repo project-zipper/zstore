@@ -2,64 +2,51 @@ import os
 import json
 import requests
 
-# ---------- CONFIG ----------
 FDROID_INDEX_URL = "https://f-droid.org/repo/index-v1.json"
-CUSTOM_APK_DIR = "apks"      # your custom APKs in repo
-ICON_DIR = "icons"           # optional icons folder
-FDROID_APK_DIR = "apks/fdroid"  # where to download F-Droid APKs
-OUTPUT_JSON = "index.json"
-# ----------------------------
-
+FDROID_APK_DIR = "apks/fdroid"
 os.makedirs(FDROID_APK_DIR, exist_ok=True)
 
 apps = []
 
-# 1️⃣ Load F-Droid metadata
 print("Fetching F-Droid index...")
 fdroid_data = requests.get(FDROID_INDEX_URL).json()
 
-for pkg, details in fdroid_data["packages"].items():
-    latest = details["versions"][-1]
-    apk_name = latest["apkName"]
+packages = fdroid_data.get("packages", {})
+
+for pkg, details in packages.items():
+    versions = details.get("versions", [])
+    if not versions:
+        continue  # skip apps without versions
+
+    latest = versions[-1]
+    apk_name = latest.get("apkName")
+    version_name = latest.get("versionName", "1.0")
+    if not apk_name:
+        continue  # skip if apkName missing
+
     apk_url = f"https://f-droid.org/repo/{apk_name}"
     local_path = os.path.join(FDROID_APK_DIR, apk_name)
 
-    # Download APK if not already present
+    # Download APK if not present
     if not os.path.exists(local_path):
         print(f"Downloading {apk_name}...")
         r = requests.get(apk_url)
         with open(local_path, "wb") as f:
             f.write(r.content)
 
-    app_name = details["metadata"]["name"].get("en", pkg)
+    # Get app name safely
+    app_name = details.get("metadata", {}).get("name", {}).get("en", pkg)
+
+    # Category fallback
+    category = details.get("metadata", {}).get("categories", ["fdroid"])[0]
+
     apps.append({
         "name": app_name,
         "package": pkg,
-        "version": latest["versionName"],
-        "apk": local_path.replace("\\","/"),  # local repo path
-        "category": details["metadata"].get("categories", ["fdroid"])[0],
+        "version": version_name,
+        "apk": local_path.replace("\\","/"),
+        "category": category,
         "icon": f"icons/fdroid/{pkg}.png"  # optional
     })
 
-# 2️⃣ Scan custom repo APKs
-for root, dirs, files in os.walk(CUSTOM_APK_DIR):
-    for file in files:
-        if file.endswith(".apk"):
-            path = os.path.join(root, file).replace("\\","/")
-            name = os.path.splitext(file)[0]
-            category = root.split("/")[-1]
-            icon_path = f"{ICON_DIR}/{category}/{name}.png"
-            apps.append({
-                "name": name,
-                "package": f"com.zipperos.{name.lower()}",
-                "version": "1.0",
-                "apk": path,
-                "category": category,
-                "icon": icon_path
-            })
-
-# 3️⃣ Save index.json
-with open(OUTPUT_JSON, "w") as f:
-    json.dump({"apps": apps}, f, indent=2)
-
-print(f"Generated JSON with {len(apps)} apps!")
+print(f"F-Droid apps added: {len(apps)}")
