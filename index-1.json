@@ -53,7 +53,7 @@
     {"name": "VLC","package": "com.zipperos.vlc","version": "1.0","apk": "apks/media/org.videolan.vlc_1.6.92-1069204_minAPI7(armeabi-v7a)(nodpi).apk","category": "media","icon": "icons/core/IMG_2273.png"},
     {"name": "Messenger Lite","package": "com.zipperos.messengerlite","version": "1.0","apk": "apks/apk/messenger-lite-338-0-0-3-102.apk","category": "social","icon": "icons/core/IMG_2288.jpeg"},
     {"name": "Facebook Lite","package": "com.zipperos.facebooklite","version": "1.0","apk": "apks/apk/com.facebook.lite_506.0.0.0.61-514000489_minAPI26(arm64-v8a)(nodpi)_apkmirror.com.apk","category": "social","icon": "icons/core/IMG_2289.png"},
-    {"name": "ChatON","package": "com.zipperos.chaton","version": "1.0","apk": "apks/apk/com.sec.chaton_1.5.1-246_minAPI8_maxAPI10(armeabi)(nodpi)_apkmirror.com.apk","category": "social","icon": "icons/default.png"},
+    {"name": "ChatON","package": "com.zipperos.chaton","version": "1.0","apk": "apks/apk/com.sec.chaton_1.5.1-246_minAPI8_maxAPI10(armeabi)(nodpi)_apkmirror.com.apk","category": "social","icon": "icons/core/IMG_2290.webp"},
     {"name": "Instagram Lite","package": "com.zipperos.instagramlite","version": "1.0","apk": "apks/apk/com.instagram.lite_505.0.0.7.102-921852801_minAPI21(armeabi-v7a)(nodpi)_apkmirror.com.apk","category": "social","icon": "icons/default.png"},
     {"name": "Google Go","package": "com.zipperos.googlego","version": "1.0","apk": "apks/apk/google-go-3-139-890272776-release.apk","category": "placeholders","icon": "icons/default.png"},
     {"name": "Placeholder App 22","package": "com.zipperos.placeholder22","version": "1.0","apk": "apks/placeholders/app22.apk","category": "placeholders","icon": "icons/default.png"},
