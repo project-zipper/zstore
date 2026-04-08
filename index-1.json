@@ -48,7 +48,7 @@
     {"name": "Easter Egg Collection","package": "com.zipperos.eastersggs","version": "1.0","apk": "apks/core/easter-egg-collection.apk","category": "System Games","icon": "icons/default.png"},
     {"name": "Ashell","package": "com.zipperos.ashell","version": "1.0","apk": "apks/core/in.sunilpaulmathew.ashell_v0.25-25_minAPI24(nodpi)_apkmirror.com.apk","category": "Shell","icon": "icons/default.png"},
     {"name": "ConnectBot","package": "com.zipperos.connectbot","version": "1.0","apk": "apks/core/org.connectbot_1.7.1-323_minAPI3(armeabi)(nodpi)_apkmirror.com.apk","category": "shell","icon": "icons/default.png"},
-    {"name": "Placeholder App 14","package": "com.zipperos.placeholder14","version": "1.0","apk": "apks/placeholders/app14.apk","category": "placeholders","icon": "icons/default.png"},
+    {"name": "NewPipe","package": "com.zipperos.newpipe","version": "1.0","apk": "apks/media/NewPipe_v0.28.4.apk","category": "Social","icon": "icons/default.png"},
     {"name": "Placeholder App 15","package": "com.zipperos.placeholder15","version": "1.0","apk": "apks/placeholders/app15.apk","category": "placeholders","icon": "icons/default.png"},
     {"name": "Placeholder App 16","package": "com.zipperos.placeholder16","version": "1.0","apk": "apks/placeholders/app16.apk","category": "placeholders","icon": "icons/default.png"},
     {"name": "Placeholder App 17","package": "com.zipperos.placeholder17","version": "1.0","apk": "apks/placeholders/app17.apk","category": "placeholders","icon": "icons/default.png"},
