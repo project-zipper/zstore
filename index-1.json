@@ -42,7 +42,7 @@
     },
     {"name": "Old Youtube","package": "com.zipperos.oldyoutube","version": "1.0","apk": "apks/core/com.google.android.youtube_1.6.19_(E)-1619_minAPI7(nodpi)_apkmirror.com.apk","category": "classic","icon": "icons/default.png"},
     {"name": "Barcode Scanner","package": "com.zipperos.barcodescanner","version": "1.0","apk": "apks/core/com.google.zxing.client.android_3.0-38_minAPI3(nodpi)_apkmirror.com.apk","category": "tools","icon": "icons/default.png"},
-    {"name": "Placeholder App 8","package": "com.zipperos.placeholder8","version": "1.0","apk": "apks/placeholders/app8.apk","category": "placeholders","icon": "icons/default.png"},
+    {"name": "Minesweeper","package": "com.zipperos.minesweeper","version": "1.0","apk": "apks/core/com.panu_1.0.1-1_minAPI3(nodpi)_apkmirror.com.apk","category": "games","icon": "icons/default.png"},
     {"name": "Placeholder App 9","package": "com.zipperos.placeholder9","version": "1.0","apk": "apks/placeholders/app9.apk","category": "placeholders","icon": "icons/default.png"},
     {"name": "Placeholder App 10","package": "com.zipperos.placeholder10","version": "1.0","apk": "apks/placeholders/app10.apk","category": "placeholders","icon": "icons/default.png"},
     {"name": "Placeholder App 11","package": "com.zipperos.placeholder11","version": "1.0","apk": "apks/placeholders/app11.apk","category": "placeholders","icon": "icons/default.png"},
