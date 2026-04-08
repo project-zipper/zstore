@@ -6,114 +6,92 @@
 <title>ZipperOS App Store</title>
 <style>
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #f0f2f5;
-    color: #333;
+    background: #f5f5f5;
   }
   header {
-    background-color: #0078d4;
+    background: #1a73e8;
     color: white;
     padding: 1rem;
     text-align: center;
     font-size: 1.5rem;
-    font-weight: bold;
   }
-  main {
+  #app-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
     padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 800px;
-    margin: auto;
+    justify-content: center;
   }
-  .app-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    max-height: 80vh;
-    overflow-y: auto;
-    padding-right: 0.5rem;
-  }
-  .app-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background-color: white;
-    padding: 0.5rem;
-    border-radius: 8px;
+  .app {
+    background: white;
+    width: 120px;
+    text-align: center;
+    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: transform 0.1s;
   }
-  .app-item:hover {
-    transform: translateY(-2px);
+  .app:hover {
+    transform: scale(1.05);
   }
-  .app-icon {
+  .app img {
     width: 64px;
     height: 64px;
     object-fit: contain;
-    border-radius: 12px;
-    background-color: #eee;
+    margin-bottom: 0.5rem;
   }
-  .app-info {
-    flex: 1;
-  }
-  .app-info h3 {
-    margin: 0;
-    font-size: 1.1rem;
-  }
-  .app-info p {
-    margin: 0.2rem 0 0 0;
-    font-size: 0.85rem;
-    color: #666;
-  }
-  .download-btn {
-    background-color: #0078d4;
-    color: white;
-    padding: 0.5rem 0.75rem;
-    text-decoration: none;
-    border-radius: 6px;
+  .app-name {
     font-weight: bold;
+    margin-bottom: 0.25rem;
   }
-  .download-btn:hover {
-    background-color: #005a9e;
+  .app-version {
+    color: #555;
   }
 </style>
 </head>
 <body>
-
 <header>ZipperOS App Store</header>
-<main>
-  <div class="app-list" id="appList"></div>
-</main>
+<div id="app-list"></div>
 
 <script>
-  async function loadApps() {
-    const response = await fetch('index.json');
-    const data = await response.json();
-    const appList = document.getElementById('appList');
-    appList.innerHTML = '';
+const chunks = 17; // number of chunks
+const appList = document.getElementById("app-list");
 
-    data.apps.forEach(app => {
-      // Use icon if exists, otherwise fallback
-      const iconPath = app.icon ? app.icon : 'icons/default.png';
-      const appItem = document.createElement('div');
-      appItem.className = 'app-item';
+async function loadApps() {
+  for (let i = 1; i <= chunks; i++) {
+    try {
+      const res = await fetch(`index-${i}.json`);
+      const data = await res.json();
+      data.apps.forEach(app => {
+        const appDiv = document.createElement("div");
+        appDiv.className = "app";
 
-      appItem.innerHTML = `
-        <img src="${iconPath}" alt="${app.name}" class="app-icon" onerror="this.src='icons/default.png'">
-        <div class="app-info">
-          <h3>${app.name}</h3>
-          <p>Category: ${app.category} | Version: ${app.version}</p>
-        </div>
-        <a href="${app.apk}" class="download-btn" download>Install</a>
-      `;
-      appList.appendChild(appItem);
-    });
+        const iconPath = app.icon || `icons/default.png`;
+
+        appDiv.innerHTML = `
+          <img src="${iconPath}" alt="${app.name} icon">
+          <div class="app-name">${app.name}</div>
+          <div class="app-version">${app.version}</div>
+        `;
+
+        // Download link for APK
+        appDiv.onclick = () => {
+          window.location.href = app.apk;
+        };
+
+        appList.appendChild(appDiv);
+      });
+    } catch (e) {
+      console.error(`Failed to load index-${i}.json`, e);
+    }
   }
+}
 
-  loadApps();
+loadApps();
 </script>
-
 </body>
 </html>
