@@ -44,7 +44,7 @@
     {"name": "Barcode Scanner","package": "com.zipperos.barcodescanner","version": "1.0","apk": "apks/core/com.google.zxing.client.android_3.0-38_minAPI3(nodpi)_apkmirror.com.apk","category": "tools","icon": "icons/default.png"},
     {"name": "Minesweeper","package": "com.zipperos.minesweeper","version": "1.0","apk": "apks/core/com.panu_1.0.1-1_minAPI3(nodpi)_apkmirror.com.apk","category": "games","icon": "icons/default.png"},
     {"name": "DR Parser","package": "com.zipperos.drparser","version": "1.0","apk": "apks/core/com.sec.android.app.parser_13.0.01.8-1300100008_minAPI29(nodpi)_apkmirror.com.apk","category": "system","icon": "icons/default.png"},
-    {"name": "Placeholder App 10","package": "com.zipperos.placeholder10","version": "1.0","apk": "apks/placeholders/app10.apk","category": "placeholders","icon": "icons/default.png"},
+    {"name": "Easter Egg","package": "com.zipperos.androideazteregg","version": "1.0","apk": "apks/core/easter-egg-5-0-0.apk","category": "system","icon": "icons/default.png"},
     {"name": "Placeholder App 11","package": "com.zipperos.placeholder11","version": "1.0","apk": "apks/placeholders/app11.apk","category": "placeholders","icon": "icons/default.png"},
     {"name": "Placeholder App 12","package": "com.zipperos.placeholder12","version": "1.0","apk": "apks/placeholders/app12.apk","category": "placeholders","icon": "icons/default.png"},
     {"name": "Placeholder App 13","package": "com.zipperos.placeholder13","version": "1.0","apk": "apks/placeholders/app13.apk","category": "placeholders","icon": "icons/default.png"},
