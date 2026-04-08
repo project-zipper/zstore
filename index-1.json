@@ -41,7 +41,7 @@
       "icon": "icons/core/IMG_2253.png"
     },
     {"name": "Old Youtube","package": "com.zipperos.oldyoutube","version": "1.0","apk": "apks/core/com.google.android.youtube_1.6.19_(E)-1619_minAPI7(nodpi)_apkmirror.com.apk","category": "classic","icon": "icons/core/IMG_2263.png"},
-    {"name": "Barcode Scanner","package": "com.zipperos.barcodescanner","version": "1.0","apk": "apks/core/com.google.zxing.client.android_3.0-38_minAPI3(nodpi)_apkmirror.com.apk","category": "tools","icon": "icons/default.png"},
+    {"name": "Barcode Scanner","package": "com.zipperos.barcodescanner","version": "1.0","apk": "apks/core/com.google.zxing.client.android_3.0-38_minAPI3(nodpi)_apkmirror.com.apk","category": "tools","icon": "icons/core/IMG_2264.png"},
     {"name": "Minesweeper","package": "com.zipperos.minesweeper","version": "1.0","apk": "apks/core/com.panu_1.0.1-1_minAPI3(nodpi)_apkmirror.com.apk","category": "games","icon": "icons/default.png"},
     {"name": "DR Parser","package": "com.zipperos.drparser","version": "1.0","apk": "apks/core/com.sec.android.app.parser_13.0.01.8-1300100008_minAPI29(nodpi)_apkmirror.com.apk","category": "system","icon": "icons/default.png"},
     {"name": "Easter Egg","package": "com.zipperos.androideazteregg","version": "1.0","apk": "apks/core/easter-egg-5-0-0.apk","category": "system","icon": "icons/default.png"},
