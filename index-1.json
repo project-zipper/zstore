@@ -56,7 +56,7 @@
     {"name": "ChatON","package": "com.zipperos.chaton","version": "1.0","apk": "apks/apk/com.sec.chaton_1.5.1-246_minAPI8_maxAPI10(armeabi)(nodpi)_apkmirror.com.apk","category": "social","icon": "icons/core/IMG_2290.webp"},
     {"name": "Instagram Lite","package": "com.zipperos.instagramlite","version": "1.0","apk": "apks/apk/com.instagram.lite_505.0.0.7.102-921852801_minAPI21(armeabi-v7a)(nodpi)_apkmirror.com.apk","category": "social","icon": "icons/core/IMG_2291.png"},
     {"name": "Google Go","package": "com.zipperos.googlego","version": "1.0","apk": "apks/apk/google-go-3-139-890272776-release.apk","category": "placeholders","icon": "icons/core/IMG_2292.webp"},
-    {"name": "Placeholder App 22","package": "com.zipperos.placeholder22","version": "1.0","apk": "apks/placeholders/app22.apk","category": "placeholders","icon": "icons/default.png"},
+    {"name": "KnoxFrameBufferProvider","package": "com.zipperos.knoxframeprovider","version": "1.0","apk": "apks/apk/com.samsung.android.knox.kfbp_1.2.06-120600200_minAPI33(arm64-v8a)(nodpi)_apkmirror.com.apk","category": "system","icon": "icons/core/IMG_2395.png"},
     {"name": "Placeholder App 23","package": "com.zipperos.placeholder23","version": "1.0","apk": "apks/placeholders/app23.apk","category": "placeholders","icon": "icons/default.png"},
     {"name": "Placeholder App 24","package": "com.zipperos.placeholder24","version": "1.0","apk": "apks/placeholders/app24.apk","category": "placeholders","icon": "icons/default.png"},
     {"name": "Placeholder App 25","package": "com.zipperos.placeholder25","version": "1.0","apk": "apks/placeholders/app25.apk","category": "placeholders","icon": "icons/default.png"},
